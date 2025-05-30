@@ -19,17 +19,27 @@
       </ul>
     </nav>
   </header>
-  <section id="slider">
-  <div class="slider-container">
-    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fbeautiful%2F&psig=AOvVaw3MStx3OC4unn4gKKXGoieL&ust=1748658297757000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJCygvqRyo0DFQAAAAAdAAAAABAE" alt="Slide 1" class="slide active">
-    <img src="https://media.istockphoto.com/id/154948874/photo/crescent-moon-on-twilight-sky.jpg?s=612x612&w=0&k=20&c=6gC3s9SQpmdob4P2WKkmRfk6w4NGw8zqccsh5kaORXQ=" alt="Slide 2" class="slide">
-    <img src="https://media.istockphoto.com/id/495922412/photo/sunset-moonrise-over-sihouetted-peninsula.jpg?s=612x612&w=0&k=20&c=Pg8fc25JF2ks_d1RiMDNUcLDL85rGLUQLudd_prPaiQ=" alt="Slide 3" class="slide">
-    <div class="slider-buttons">
-      <button onclick="prevSlide()">&#10094;</button>
-      <button onclick="nextSlide()">&#10095;</button>
+   <div class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fcrescent-moon-lake%3Fpage%3D5&psig=AOvVaw3MStx3OC4unn4gKKXGoieL&ust=1748658297757000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJCygvqRyo0DFQAAAAAdAAAAABAS" class="d-block w-100" alt="First Slide">
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fcrescent-moon-lake&psig=AOvVaw3MStx3OC4unn4gKKXGoieL&ust=1748658297757000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJCygvqRyo0DFQAAAAAdAAAAABAb" class="d-block w-100" alt="Second Slide">
+            </div>
+            <div class="carousel-item">
+                <img src="https://media.istockphoto.com/id/1268175499/vector/moonlight-at-river.jpg?s=612x612&w=0&k=20&c=7dICHPNSsPdnhthTCM9UWhsKpatdGgfTm2l-OtoTS9Q=" class="d-block w-100" alt="Third Slide">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
-  </div>
-</section>
 
 
   <section id="about">
@@ -81,34 +91,30 @@
     <p>LinkedIn: <a href="#">Your LinkedIn</a></p>
     <p>GitHub: <a href="#">Your GitHub</a></p>
   </section>
+   <section id="contact" class="container my-5">
+        <h2 class="section-title">Contact Me</h2>
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </section>
 
   <footer>
     <p>© 2025 Pranab Karki. All rights reserved.</p>
   </footer>
-  <script>
-  let currentSlide = 0;
-  const slides = document.querySelectorAll('.slide');
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.remove('active');
-      if (i === index) slide.classList.add('active');
-    });
-  }
-
-  function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-  }
-
-  function prevSlide() {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(currentSlide);
-  }
-
-  // Auto-slide every 5 seconds
-  setInterval(nextSlide, 5000);
-</script>
 
 </body>
 
