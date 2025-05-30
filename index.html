@@ -19,6 +19,18 @@
       </ul>
     </nav>
   </header>
+  <section id="slider">
+  <div class="slider-container">
+    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fbeautiful%2F&psig=AOvVaw3MStx3OC4unn4gKKXGoieL&ust=1748658297757000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJCygvqRyo0DFQAAAAAdAAAAABAE" alt="Slide 1" class="slide active">
+    <img src="https://media.istockphoto.com/id/154948874/photo/crescent-moon-on-twilight-sky.jpg?s=612x612&w=0&k=20&c=6gC3s9SQpmdob4P2WKkmRfk6w4NGw8zqccsh5kaORXQ=" alt="Slide 2" class="slide">
+    <img src="https://media.istockphoto.com/id/495922412/photo/sunset-moonrise-over-sihouetted-peninsula.jpg?s=612x612&w=0&k=20&c=Pg8fc25JF2ks_d1RiMDNUcLDL85rGLUQLudd_prPaiQ=" alt="Slide 3" class="slide">
+    <div class="slider-buttons">
+      <button onclick="prevSlide()">&#10094;</button>
+      <button onclick="nextSlide()">&#10095;</button>
+    </div>
+  </div>
+</section>
+
 
   <section id="about">
     <h2>About Me</h2>
@@ -73,5 +85,31 @@
   <footer>
     <p>© 2025 Pranab Karki. All rights reserved.</p>
   </footer>
+  <script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      if (i === index) slide.classList.add('active');
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  // Auto-slide every 5 seconds
+  setInterval(nextSlide, 5000);
+</script>
+
 </body>
+
 </html>
